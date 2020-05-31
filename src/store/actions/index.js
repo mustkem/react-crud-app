@@ -1,5 +1,6 @@
 export {
   getProducts,
+  getProductDetail,
   updateProduct,
   deleteProduct,
   addProduct,

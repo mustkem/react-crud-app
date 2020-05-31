@@ -22,10 +22,10 @@ function Layout(props) {
           </nav>
         </div>
       </header>
-      {props.children}
+      <div className="layout-content">{props.children}</div>
       <footer className="footer">
         <div className="container">
-          <div className="content">@footer</div>
+          <div className="content">footer</div>
         </div>
       </footer>
     </div>

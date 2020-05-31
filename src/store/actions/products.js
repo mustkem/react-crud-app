@@ -26,20 +26,53 @@ export const getProducts = () => (dispatch) => {
   });
 };
 
+export const onGetProductDetail = (data) => {
+  return {
+    type: actionTypes.GET_PRODUCT_DETAIL,
+    payload: data,
+  };
+};
+
+export const getProductDetail = (id) => (dispatch) => {
+  return new Promise((res, rej) => {
+    httpInstance({
+      method: "get",
+      url: "/products/" + id,
+    })
+      .then(function (response) {
+        dispatch(onGetProductDetail(response.data));
+        res(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+        rej();
+      });
+  });
+};
+
 export const updateProduct = (id, payload) => (dispatch) => {
   return new Promise((res, rej) => {
+    console.log(payload);
     httpInstance({
       method: "put",
       url: "/products/" + id,
       data: payload,
     })
       .then(function (response) {
+        dispatch(onGetProductDetail(response.data));
         res(response);
       })
       .catch(function (error) {
         rej(error.response);
       });
   });
+};
+
+export const onDeleteProduct = (id) => {
+  return {
+    type: actionTypes.DELETE_PRODUCT,
+    payload: id,
+  };
 };
 
 export const deleteProduct = (id) => (dispatch) => {
@@ -49,6 +82,7 @@ export const deleteProduct = (id) => (dispatch) => {
       url: "/products/" + id,
     })
       .then(function (response) {
+        dispatch(onDeleteProduct(id));
         res(response);
       })
       .catch(function (error) {
