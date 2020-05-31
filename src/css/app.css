@@ -1,0 +1,21 @@
+.container {
+  max-width: 500px;
+  margin: auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: left;
+}
+.nav li {
+  margin-right: 20px;
+}
+
+.nav li a {
+  padding: 15px 20px;
+  font-size: 15px;
+}
+
+.footer .content {
+  padding: 50px 20px;
+}
