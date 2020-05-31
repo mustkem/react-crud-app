@@ -1,21 +1,49 @@
 .container {
-  max-width: 500px;
+  max-width: 1200px;
   margin: auto;
 }
 
-.nav {
+.header {
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 2.5px 0 rgba(36, 39, 44, 0.1);
+}
+
+.nav ul {
   display: flex;
   justify-content: left;
 }
 .nav li {
   margin-right: 20px;
+  display: flex;
 }
 
 .nav li a {
-  padding: 15px 20px;
+  padding: 15px;
   font-size: 15px;
+  text-decoration: none;
+}
+.nav li a.active {
+  background: #1da1f2;
+  color: #fff;
 }
 
 .footer .content {
-  padding: 50px 20px;
+  padding: 20px;
+}
+
+h1 {
+  padding: 30px;
+  font-size: 20px;
+}
+
+.search-bar {
+  padding: 20px 0;
+}
+
+.search-bar input {
+  display: flex;
+  margin-left: auto;
+  min-width: 250px;
+  padding: 3px;
+  font-size: 14px;
 }
