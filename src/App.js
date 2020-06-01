@@ -61,5 +61,5 @@ Context doesn't give anything like the Redux DevTools where we can see our centr
 
 Redux provide the ability to handle API request in Action creators easily.
 
-So we can user redux and context api both in app. Because each one have some advantages over the other.
+So we can use redux and context api both in app. Because each one have some advantages over the other.
 */
